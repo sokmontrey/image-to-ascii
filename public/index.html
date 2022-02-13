@@ -1,15 +1,26 @@
 <html>
 	<head>
-		<script defer src='app.js'></script>
-		<style>
-		</style>
+		<script defer src='index.js'></script>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<p id='header-text'>
+			Image to Ascii
+		</p>
+		<p id='sub-header-text'>
+			Convert an image to ascii art
+		</p>
+		<div class='row'>
+			<label>Minimum number of character(width/height)</label>
+			<input id='min-width-input' type='text' value=30 />
+		</div>
 		<div id='image-container'></div>
-		<label>min size</label>
-		<input id='min-input' placeholder='min width' value=50 />
-		<input type='file' id='file-input' />
-		<br />
+		<div class='row'>
+			<label>List of character separate by space</label>
+			<input id='ascii-list-input' type='text' 
+				value='7 4 1 2 3 5 6 0 9 8'/>
+		</div>
+		<input id='file-input' type='file' />
 		<canvas id='canvas'></canvas>
 	</body>
 </html>
