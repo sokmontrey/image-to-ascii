@@ -13,6 +13,7 @@ if(window.innerWidth < window.innerHeight){
 	right_container.style.height = '100%';
 	right_container.style.overflowY = 'visible';
 	right_container.style.marginTop = 'var(--padding)';
+	document.a.style.fontSize = 'var(--medium-text)';
 }
 
 const fileInput = document.getElementById('file-input');
