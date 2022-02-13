@@ -17,8 +17,48 @@ function main(event){
 		img_container.innerHTML = `<img src="${base64String}">`;
 
 		getPixels(base64String, isColor, (pixels)=>{
-			//pixels
+			createAscii(pixels, isColor);
 		});
+	}
+}
+
+function createAscii(pixels, isColor){
+	const char_font = 'consolas',
+		char_size = 14,
+		char_width = 12,
+		char_height = 12;
+
+	const ascii_list = document.getElementById('ascii-list-input').value.split(' ');
+	const canvas = document.getElementById('canvas');
+	canvas.width = pixels[0].length * char_width;
+	canvas.height = pixels.length * char_height;
+
+	const ctx = canvas.getContext('2d');
+	ctx.fillStyle = '#000';
+	ctx.fillRect(0,0,canvas.width,canvas.height);
+
+	for(let y=0; y<pixels.length; y++){
+		for(let x=0; x<pixels[0].length; x++){
+			let index,
+				pixel=pixels[y][x];
+			if(isColor){
+				index = Math.floor(
+					(pixel.r+pixel.g+pixel.b)/3 * (ascii_list.length-1)
+				);
+				ctx.fillStyle = `rgb(${pixel.r*255},${pixel.g*255},${pixel.b*255})`;
+			}else{
+				index = Math.floor(
+					pixel.g * (ascii_list.length-1)
+				);
+				ctx.fillStyle = `rgb(${pixel.g*255},${pixel.g*255},${pixel.g*255})`;
+			}
+			ctx.font = char_size + 'px ' + char_font;
+			ctx.fillText(
+				ascii_list[index], 
+				x*char_width, 
+				y*char_height + char_size/1.5
+			);
+		}
 	}
 }
 
