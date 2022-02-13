@@ -17,7 +17,7 @@ function main(event){
 		img_container.innerHTML = `<img src="${base64String}">`;
 
 		getPixels(base64String, isColor, (pixels)=>{
-
+			//pixels
 		});
 	}
 }
@@ -39,9 +39,9 @@ function getPixels(base64String, isColor, callBack){
 				const data = ctx.getImageData(x,y,1,1).data
 				if(isColor){
 					temp.push({
-						r: data[0],
-						g: data[1],
-						b: data[2],
+						r: data[0]/255,
+						g: data[1]/255,
+						b: data[2]/255,
 					});
 				}else{
 					const grayscale = (data[0]+data[1]+data[2])/3;
