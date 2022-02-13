@@ -1,7 +1,7 @@
 import Resize from './resizer.js';
 
 if(window.innerWidth < window.innerHeight){
-	document.documentElement.style.setProperty('font-size', '20px');
+	document.documentElement.style.setProperty('font-size', '25px');
 
 	document.body.style.flexDirection = 'column';
 	document.getElementById('left-container').style.width = '100%';
