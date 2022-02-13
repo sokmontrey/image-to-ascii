@@ -1,33 +1,51 @@
 <html>
 	<head>
-		<script defer src='index.js'></script>
-		<script type='module' src='resizer.js'></script>
+		<script defer type='module' src='index.js'></script>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<p id='header-text'>
-			Image to Ascii
-		</p>
-		<p id='sub-header-text'>
-			Convert an image to ascii art
-		</p>
-		<div class='row'>
-			<label>Minimum number of character(width/height)</label>
-			<input id='min-char-input' type='text' value=50 />
+
+		<div id='left-container'>
+			<div class='col' id='left-top'>
+				<p id='header-text'>
+					Image to ASCII
+				</p>
+				<p id='sub-header-text'>
+					Turn your images into ASCII art!
+				</p>
+			</div>
+
+			<div class='col' id='left-bottom'>
+				<div class='col'>
+					<label>Minimum number of character</label>
+					<input id='min-char-input' type='text' value=50 />
+				</div>
+				<div class='col'>
+					<label>List of character</label>
+					<input id='ascii-list-input' type='text' 
+						value='7 4 1 2 3 5 6 0 9 8'/>
+				</div>
+				<div class='row'>
+					<label>color</label>
+					<input id='is-color-input'class='checkbox' type='checkbox' />
+				</div>
+				<input id='file-input' type='file' />
+
+				<div class='row'>
+					<div id='recreate-button-container'></div>
+					<div id='save-button-container'></div>
+					<!--
+					<button id='recreate-button'>Recreate</button>
+					<button id='download-button'>Download</button>
+					-->
+				</div>
+				<div id='image-container'></div>
+			</div>
 		</div>
-		<div class='row'>
-			<label>List of character separate by space</label>
-			<input id='ascii-list-input' type='text' 
-				value='7 4 1 2 3 5 6 0 9 8'/>
+
+		<div id='right-container'>
+			<img id='ascii-art' height='80%' src='ascii_art.jpg' />
+			<canvas width=0 height=0 id='canvas'></canvas>
 		</div>
-		<div class='row'>
-			<label>color</label>
-			<input id='is-color-input' type='checkbox' />
-		</div>
-		<div id='image-container'></div>
-		<input id='file-input' type='file' />
-		<div id='recreate-button-container'></div>
-		<div id='save-button-container'></div>
-		<canvas id='canvas'></canvas>
 	</body>
 </html>

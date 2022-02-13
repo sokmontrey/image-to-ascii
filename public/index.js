@@ -6,6 +6,11 @@ fileInput.addEventListener('change', main);
 var name = 1;
 
 function main(event){
+	//delete elements with id of 'ascii-art'
+	const ascii_art = document.getElementById('ascii-art');
+	if(ascii_art){
+		ascii_art.parentNode.removeChild(ascii_art);
+	}
 	var img = new Image;
 	img.src= URL.createObjectURL(event.target.files[0]);
 
