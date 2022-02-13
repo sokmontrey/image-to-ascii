@@ -1,5 +1,15 @@
 import Resize from './resizer.js';
 
+if(window.innerWidth < window.innerHeight){
+	document.body.style.flexDirection = 'column';
+	document.getElementById('left-container').style.width = '100%';
+	const right_container = document.getElementById('right-container');
+	right_container.style.width = '100%';
+	right_container.style.height = '100%';
+	right_container.style.overflowY = 'visible';
+	right_container.style.marginTop = 'var(--padding)';
+}
+
 const fileInput = document.getElementById('file-input');
 fileInput.addEventListener('change', main);
 
