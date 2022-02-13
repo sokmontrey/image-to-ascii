@@ -23,8 +23,8 @@ function main(event){
 }
 
 function createAscii(pixels, isColor){
-	const char_font = 'consolas',
-		char_size = 14,
+	const char_font = 'monospace',
+		char_size = 15,
 		char_width = 12,
 		char_height = 12;
 
