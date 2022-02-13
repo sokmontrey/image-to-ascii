@@ -2,6 +2,8 @@ import Resize from './resizer.js';
 
 if(window.innerWidth < window.innerHeight){
 	document.documentElement.style.setProperty('font-size', '32px');
+	document.documentElement.style.setProperty('--medium-size', '1.5rem');
+	document.documentElement.style.setProperty('--small-size', '1.2rem');
 
 	document.body.style.flexDirection = 'column';
 	document.body.style.padding = 'calc(var(--padding)*3)';
