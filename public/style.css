@@ -23,6 +23,10 @@ p {
   padding: 0px;
   margin: 0px;
 }
+input {
+  padding: calc(var(--padding) / 3);
+  margin: calc(var(--padding) / 3);
+}
 .row {
   display: flex;
   flex-direction: row;
@@ -43,13 +47,14 @@ p {
   color: var(--dark-color);
   padding-bottom: var(--padding);
 }
-#min-width-input {
-  margin-left: var(--padding);
+#min-char-input {
   outline: none;
-  padding: calc(var(--padding) / 3);
 }
 #file-input {
   padding-top: var(--padding);
   font-size: 1.2rem;
   font-family: var(--secondary-font);
+}
+#is-color-input {
+  width: 2rem;
 }
